@@ -9,6 +9,7 @@ package com.epam.olha_yeskina.java.lection10;
 
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import java.util.Scanner;
 
@@ -19,6 +20,7 @@ public class Calculator {
 
 static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+
         int firstValue = getInt();
         char operation = getOperation();
         int secondValue = getInt();
@@ -27,15 +29,19 @@ static Scanner scanner = new Scanner(System.in);
     }
 
     public static int addition(int firstValue, int secondValue){
-        logger.debug("Something");
+        logger.info("Info it is addition method");
+        logger.warn("Warning it is addition method");
+        logger.debug("Debug it is addition method");
         return firstValue+secondValue;
     }
 
     public static int subtraction(int firstValue, int secondValue){
+        logger.debug("Debug it is subtraction method");
         return firstValue-secondValue;
     }
 
     public static int multiplication(int firstValue, int secondValue){
+        logger.info("Info it is multiplication method");
         return firstValue*secondValue;
     }
 
@@ -51,7 +57,7 @@ static Scanner scanner = new Scanner(System.in);
         }catch (ArithmeticException e){
             logger.error(e.getMessage(), e);
 
-            System.out.println("Error: "+ e.getMessage());
+//            System.out.println("Error: "+ e.getMessage());
 //            secondValue = getInt();
 //            System.out.println(calc(firstValue,secondValue,'/'));
         }
@@ -62,6 +68,7 @@ static Scanner scanner = new Scanner(System.in);
 
 
     public static int getInt(){
+        logger.info("Get Int value method started");
         System.out.println("Введите число:");
         int value;
         if(scanner.hasNextInt()){
