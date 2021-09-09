@@ -8,26 +8,20 @@ package com.epam.olha_yeskina.java.lection10;
 
 
 
-
-
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import org.apache.log4j.Logger;
 
 import java.util.Scanner;
 
 
 public class Calculator {
 
-    private static final Logger logger = LoggerFactory.getLogger(Calculator.class);
+    final static Logger logger = Logger.getLogger(Calculator.class);
 
 static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         int firstValue = getInt();
         char operation = getOperation();
         int secondValue = getInt();
-
         System.out.println(calc(firstValue,secondValue,operation));
 
     }
