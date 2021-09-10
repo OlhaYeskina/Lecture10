@@ -20,6 +20,10 @@ public class Calculator {
 
 static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        PropertyConfigurator.configure(System.getProperty("user.dir") + "\\src\\main\\resources\\"+"log4j.properties");
+
+      //  System.out.println(logger.getLevel());
+
 
         int firstValue = getInt();
         char operation = getOperation();
